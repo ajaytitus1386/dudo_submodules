@@ -2,7 +2,7 @@ import Player from "../../models/player";
 import Room from "../../models/room";
 
 export const START_ROOM = "start_room";
-export const END_ROOM = "end_room";
+export const HOST_ENDS_ROOM = "host_ends_room";
 
 export const ROOM_ALREADY_EXISTS = "room_already_exists";
 export const ROOM_DOES_NOT_EXIST = "room_does_not_exist";
@@ -25,7 +25,7 @@ export const UNKNOWN_ERROR = "unknown_error";
 
 export interface RoomEmitterEvents {
   [START_ROOM]: (data: { newRoom: Room }) => void;
-  [END_ROOM]: () => void;
+  [HOST_ENDS_ROOM]: () => void;
 
   [ROOM_ALREADY_EXISTS]: () => void;
   [ROOM_DOES_NOT_EXIST]: () => void;
