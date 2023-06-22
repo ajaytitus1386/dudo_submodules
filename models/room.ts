@@ -2,14 +2,15 @@ import User from "./user";
 
 type RoomState = "lobby" | "game";
 
-type Player = User & {
+// RoomUser is a User with additional properties in context of a room
+export type RoomUser = User & {
   isReady: boolean;
 };
 
 type Room = {
   id: string;
   name: string;
-  players: Player[]; // Array of User IDs
+  roomUsers: RoomUser[]; // Array of User IDs
   roomState: RoomState;
   host: User;
 };

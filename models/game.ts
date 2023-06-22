@@ -1,4 +1,4 @@
-import Player from "./user";
+import User from "./user";
 
 // Pre-game: Players can join and leave the room
 // Pre-round: Dice are rolled and first Player gets turn
@@ -18,12 +18,13 @@ type Bid = {
   playerId: string;
 };
 
+type Player = User & {
+  hand: number[];
+};
+
 type Game = {
-  playerOrder: Player[];
+  playerHands: Player[];
   gamePhase: GamePhase;
-  hands: {
-    [playerId: string]: number[];
-  };
   bids: Bid[];
   hasChallengeBeenMade: boolean;
   challengingPlayerId: string;

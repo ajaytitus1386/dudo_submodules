@@ -1,5 +1,5 @@
 import User from "../../models/user";
-import Room from "../../models/room";
+import Room, { RoomUser } from "../../models/room";
 
 export const START_ROOM = "start_room";
 export const HOST_ENDS_ROOM = "host_ends_room";
@@ -30,8 +30,8 @@ export interface RoomEmitterEvents {
   [ROOM_ALREADY_EXISTS]: () => void;
   [ROOM_DOES_NOT_EXIST]: () => void;
 
-  [USER_JOINED_ROOM]: (data: { user: User }) => void;
-  [USER_LEFT_ROOM]: (data: { user: User }) => void;
+  [USER_JOINED_ROOM]: (data: { user: RoomUser }) => void;
+  [USER_LEFT_ROOM]: (data: { user: RoomUser }) => void;
   [USER_ALREADY_IN_ROOM]: () => void;
   [JOIN_ROOM_SUCCESS]: (data: { room: Room }) => void;
   [LEAVE_ROOM_SUCCESS]: () => void;
@@ -39,8 +39,8 @@ export interface RoomEmitterEvents {
 
   [READY_SUCCESS]: () => void;
   [UNREADY_SUCCESS]: () => void;
-  [USER_READY]: (data: { user: User }) => void;
-  [USER_UNREADY]: (data: { user: User }) => void;
+  [USER_READY]: (data: { user: RoomUser }) => void;
+  [USER_UNREADY]: (data: { user: RoomUser }) => void;
 
   [UPDATE_ROOM_METADATA]: (data: { room: Room }) => void;
   [UNKNOWN_ERROR]: (data: { code: number; message: string }) => void;
