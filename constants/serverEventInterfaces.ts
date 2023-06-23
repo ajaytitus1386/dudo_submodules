@@ -25,7 +25,7 @@ interface InterServerEvents {
 
 interface SocketData {}
 
-export {
+export type {
   ClientToServerEvents,
   InterServerEvents,
   ServerToClientEvents,
