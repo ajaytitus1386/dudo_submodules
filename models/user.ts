@@ -1,7 +1,7 @@
 type User = {
-  id: string;
-  socketId: string;
-  name: string;
-};
+    id: string
+    socketId: string
+    name: string
+}
 
-export default User;
+export default User
