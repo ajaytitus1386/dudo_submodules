@@ -5,26 +5,44 @@ import User from "./user"
 // Round: Player with turn can make a bid or other Players can call a challenge
 // Post-round: Winner of challege is displayed and host starts next round
 // Game-over: Winner of game is displayed and host ends the game
-type GamePhase = "pre-game" | "pre-round" | "round" | "post-round" | "game-over"
+export type GamePhase =
+    | "pre-game"
+    | "pre-round"
+    | "round"
+    | "post-round"
+    | "game-over"
 
-type Bid = {
+export type Bid = {
     quantity: number
     face: number
     playerId: string
 }
 
-type Player = User & {
+export type Player = User & {
     hand: number[]
 }
 
-type Game = {
-    roomId: string
+export type PlayerStats = User & {
+    wins: number
+    losses: number
+    remainingDice: number
+}
+
+export type Round = {
+    currentPlayerTurn: string
     playerHands: Player[]
-    gamePhase: GamePhase
     bids: Bid[]
     hasChallengeBeenMade: boolean
     challengingPlayerId: string
     winningPlayerId: string
+}
+
+type Game = {
+    roomId: string
+    gamePhase: GamePhase
+    currentRound: Round
+    roundsPlayed: number
+    playerStats: PlayerStats[]
 }
 
 export default Game
