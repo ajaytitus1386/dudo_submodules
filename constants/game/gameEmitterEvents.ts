@@ -1,4 +1,5 @@
 import Game, { Bid, GamePhase } from "../../models/game"
+import Room from "../../models/room"
 
 export const HOST_STARTS_GAME = "host_starts_game"
 export const HOST_ENDS_GAME = "host_ends_game"
@@ -16,7 +17,7 @@ export const CHANGE_GAME_PHASE = "change_game_phase"
 export const GAME_WINNER = "game_winner"
 
 export interface GameEmitterEvents {
-    [HOST_STARTS_GAME]: (data: { game: Game }) => void
+    [HOST_STARTS_GAME]: (data: { game: Game; room: Room }) => void
     [HOST_ENDS_GAME]: () => void
 
     [BROADCAST_GAME_STATE]: (data: { game: Game }) => void
