@@ -11,6 +11,7 @@ export const PLAYER_BID_MADE = "player_bid_made"
 export const PLAYER_CHALLENGE_MADE = "player_challenge_made"
 export const ROUND_STARTS = "round_starts"
 export const ROUND_ENDS = "round_ends"
+export const GAME_OVER = "game_over"
 
 export const NEXT_PLAYER_TURN = "next_player_turn"
 export const CHANGE_GAME_PHASE = "change_game_phase"
@@ -28,6 +29,10 @@ export interface GameEmitterEvents {
         challengingPlayerId: string
         lastBid: Bid
     }) => void
+
+    [ROUND_STARTS]: (data: { game: Game }) => void
+    [ROUND_ENDS]: (data: { game: Game }) => void
+    [GAME_OVER]: (data: { game: Game }) => void
 
     [NEXT_PLAYER_TURN]: (data: { playerId: string }) => void
     [CHANGE_GAME_PHASE]: (data: { newPhase: GamePhase }) => void

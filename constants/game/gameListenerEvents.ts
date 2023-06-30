@@ -12,8 +12,11 @@ export interface GameListenerEvents {
     [START_GAME]: (data: { hostName: string; roomName: string }) => void
     [END_GAME]: (data: { hostName: string; roomName: string }) => void
 
-    [PLAYER_MAKES_BID]: (data: { bid: Bid }) => void
-    [PLAYER_MAKES_CHALLENGE]: () => void
+    [PLAYER_MAKES_BID]: (data: { bid: Bid; roomName: string }) => void
+    [PLAYER_MAKES_CHALLENGE]: (data: {
+        playerName: string
+        roomName: string
+    }) => void
 
-    [START_NEXT_ROUND]: () => void
+    [START_NEXT_ROUND]: (data: { roomName: string }) => void
 }
