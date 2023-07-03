@@ -1,4 +1,4 @@
-import Game, { Bid, GamePhase } from "../../models/game"
+import Game, { Bid, GamePhase, Player } from "../../models/game"
 import Room from "../../models/room"
 
 export const HOST_STARTS_GAME = "host_starts_game"
@@ -36,5 +36,8 @@ export interface GameEmitterEvents {
 
     [NEXT_PLAYER_TURN]: (data: { playerId: string }) => void
     [CHANGE_GAME_PHASE]: (data: { newPhase: GamePhase }) => void
-    [GAME_WINNER]: (data: { winningPlayerId: string }) => void
+    [GAME_WINNER]: (data: {
+        winningPlayerId: string
+        playerHands: Player[]
+    }) => void
 }
