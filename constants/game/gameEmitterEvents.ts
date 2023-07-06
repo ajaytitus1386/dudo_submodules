@@ -19,7 +19,7 @@ export const GAME_WINNER = "game_winner"
 
 export interface GameEmitterEvents {
     [HOST_STARTS_GAME]: (data: { game: Game; room: Room }) => void
-    [HOST_ENDS_GAME]: () => void
+    [HOST_ENDS_GAME]: (data: { room: Room }) => void
 
     [BROADCAST_GAME_STATE]: (data: { game: Game }) => void
     [DEAL_PLAYER_HAND]: (data: { hand: number[] }) => void
@@ -27,6 +27,7 @@ export interface GameEmitterEvents {
     [PLAYER_BID_MADE]: (data: { bid: Bid }) => void
     [PLAYER_CHALLENGE_MADE]: (data: {
         challengingPlayerId: string
+        //TODO: Remove lastBid from this event
         lastBid: Bid
     }) => void
 
