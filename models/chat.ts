@@ -11,4 +11,4 @@ type SystemMessage = {
     timestamp: number
 }
 
-export { Message, SystemMessage }
+export type { Message, SystemMessage }
