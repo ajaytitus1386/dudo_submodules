@@ -13,6 +13,7 @@ export const USER_ALREADY_IN_ROOM = "user_already_in_room"
 export const JOIN_ROOM_SUCCESS = "join_room_success"
 export const LEAVE_ROOM_SUCCESS = "leave_room_success"
 export const USER_NOT_IN_ROOM = "user_not_in_room"
+export const CHANGE_HOST = "change_host"
 
 export const READY_SUCCESS = "ready_success"
 export const UNREADY_SUCCESS = "unready_success"
@@ -36,6 +37,7 @@ export interface RoomEmitterEvents {
     [JOIN_ROOM_SUCCESS]: (data: { room: Room }) => void
     [LEAVE_ROOM_SUCCESS]: () => void
     [USER_NOT_IN_ROOM]: () => void
+    [CHANGE_HOST]: (data: { newHost: User }) => void
 
     [READY_SUCCESS]: () => void
     [UNREADY_SUCCESS]: () => void
