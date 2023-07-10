@@ -4,7 +4,8 @@ export const ROOM_NAME = "/room_name"
 // Functions for endpoints
 const userRoomNameRoute = (path: string) => `${ROOM_NAME}${path}`
 
-// Objects for endpoints
+// Objects for endpoints - For Fronted
 export const ROOM_NAME_ROUTER = {
-    RANDOM: userRoomNameRoute("/random"),
+    RANDOM: (query: { seed: string }) =>
+        userRoomNameRoute("/random?=" + query.seed),
 }
