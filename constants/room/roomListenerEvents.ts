@@ -1,3 +1,5 @@
+import { RoomOptionalRules } from "../../models/room"
+
 export const CREATE_ROOM = "create_room"
 export const END_ROOM = "end_room"
 
@@ -6,6 +8,8 @@ export const USER_LEAVE_ROOM = "user_leave_room"
 
 export const USER_READY = "user_ready"
 export const USER_UNREADY = "user_unready"
+
+export const SET_OPTIONAL_RULES = "set_optional_rules"
 
 /* -------------------------------------------------------------------------- */
 
@@ -21,4 +25,9 @@ export interface RoomListenerEvents {
 
     [USER_READY]: (data: { roomName: string; userName: string }) => void
     [USER_UNREADY]: (data: { roomName: string; userName: string }) => void
+
+    [SET_OPTIONAL_RULES]: (data: {
+        roomName: string
+        rules: RoomOptionalRules
+    }) => void
 }

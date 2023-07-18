@@ -7,12 +7,18 @@ export type RoomUser = User & {
     isReady: boolean
 }
 
+export type RoomOptionalRules = {
+    acesAreWild: boolean
+    winRoundDropDie: boolean
+}
+
 type Room = {
     id: string
     name: string
     roomUsers: RoomUser[] // Array of User IDs
     roomState: RoomState
     host: User
+    rules: RoomOptionalRules
 }
 
 export default Room
