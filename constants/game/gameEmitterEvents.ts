@@ -33,7 +33,7 @@ export interface GameEmitterEvents {
 
     [ROUND_STARTS]: (data: { game: Game }) => void
     [ROUND_ENDS]: (data: { game: Game }) => void
-    [GAME_OVER]: (data: { game: Game }) => void
+    [GAME_OVER]: (data: { room: Room }) => void
 
     [NEXT_PLAYER_TURN]: (data: { playerId: string }) => void
     [CHANGE_GAME_PHASE]: (data: { newPhase: GamePhase }) => void
